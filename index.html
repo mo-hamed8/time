@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>control day</title>
+</head>
+<body>
+    <h1>Enter the wake-up time</h1>
+    <h2 id="map" ></h2>
+    <form id="frm1" action="">
+        <input type="text" name="time" id=""> 
+        <input type="button" onclick="control()" value="send">
+    </form>
+    <script>
+        function hours(x){
+            if(x>23){
+                return x-23;
+            }
+            return x;
+        }
+        function control(){            
+            var time=document.getElementById("frm1").elements[0].value;
+            var time_work=hours(Number(time)+5);
+            var achievement_time=hours(time_work+8);
+            var fun_time=hours(achievement_time+3);
+            document.getElementById("map").innerHTML ="w start   :"+time+" end :"+time_work+"<br>"+"a start :"+time_work+" end :"+achievement_time+"<br>"+"f start :"+achievement_time+" end :"+fun_time+"<br>";
+
+        }
+    </script>
+</body>
+</html>
